@@ -1,0 +1,19 @@
+Nathan Mazzaro Pereira
+
+1 - O que aconteceu quando você tentou criar um objeto diretamente da classe Forma?
+2 - Se você tentar alterar a cor da forma diretamente (ex: forma.__cor = "Azul"), o que acontece? Por que usamos métodos Getters e Setters?
+3 - Quais códigos você não precisou repetir nas classes filhas por causa da classe Forma?
+4 - Como o Python soube qual fórmula de área usar se, dentro do for, chamamos apenas o método .area()?
+5 - Caso você precisasse adicionar os cálculos para área e perímetro de Triângulo Equilátero, o que precisaria fazer? 
+6 - Explique o que é o princípio de aberto/fechado dentro do SOLID. Como este princípio pode ser visto nesta estrutura que vocês montaram? (Tive que pesquisar no CHATGPT)
+
+1 - O Python gerou um erro, porque Forma é uma classe abstrata.
+Classes abstratas possuem métodos abstratos (@abstractmethod) que ainda não foram utilizados de forma efetiva.
+2 - O atributo não será alterado da maneira esperada, porque __cor é encapsulado (privado).
+Para este tipo de alteração é necessário a criação do getter(ou @property) e setter, onde o getter lê e o setter altera.
+3 - De certa forma nenhum, já que o atributo cor foi necessário sua iniciação utilizando o super().__init__(...) e os métodos foram reescritos por meio do polimorfismo.
+4 - Devido ao polimorfismo de classes, onde várias classe podem possuir um método com mesmo nome, porém diferentes execuções.
+5 - Apenas receber o lado e a altura do triângulo, e utilizar a formúla ((l²√3)/4) -> área e o perímetro é igual a 3*l.
+6 - O princípio Aberto/Fechado diz: “Classes devem estar abertas para extensão, mas fechadas para modificação.”
+Ou seja: podemos adicionar novos comportamentos; sem alterar código já funcionando.
+Na estrutura criada: Forma funciona como base abstrata; novas formas podem ser adicionadas herdando dela; o restante do sistema continua funcionando sem alterações.
