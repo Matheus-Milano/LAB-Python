@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="jan_principal">
+    <property name="can-focus">False</property>
+    <property name="title">Divide a conta — LPII</property>
+    <property name="window-position">center</property>
+    <property name="default-width">560</property>
+    <property name="default-height">420</property>
+    <signal name="destroy" handler="ao_destruir" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="box_principal">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-top">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">12</property>
+        <child>
+          <object class="GtkLabel" id="lbl_titulo">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="label">Divide a conta</property>
+            <property name="xalign">0</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+              <attribute name="scale" value="1.3"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <!-- n-columns=3 n-rows=3 -->
+          <object class="GtkGrid" id="grid_formulario">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="row-spacing">10</property>
+            <property name="column-spacing">12</property>
+            <child>
+              <object class="GtkLabel" id="lbl_valor">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">7</property>
+                <property name="label">Valor da conta (R$):</property>
+                <property name="xalign">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbl_pessoas">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">7</property>
+                <property name="label">Nº de pessoas:</property>
+                <property name="xalign">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbl_gorjeta">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">7</property>
+                <property name="label">Gorjeta (%):</property>
+                <property name="xalign">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry_valor">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-right">7</property>
+                <property name="hexpand">True</property>
+                <property name="placeholder-text" translatable="yes">Ex: 150.00 </property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">0</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry_pessoas">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-right">7</property>
+                <property name="hexpand">True</property>
+                <property name="placeholder-text" translatable="yes">Ex: 4</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">1</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry_gorjeta">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="margin-right">7</property>
+                <property name="hexpand">True</property>
+                <property name="text" translatable="yes">10</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">2</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box_botoes">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="spacing">8</property>
+            <child>
+              <object class="GtkButton" id="btn_calcular">
+                <property name="label">Calcular</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="margin-left">3</property>
+                <signal name="clicked" handler="ao_calcular" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_salvar">
+                <property name="label">Salvar comprovante</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <signal name="clicked" handler="ao_salvar" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_abrir">
+                <property name="label">Abrir comprovante</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <signal name="clicked" handler="ao_abrir" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_limpar">
+                <property name="label">Limpar</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="margin-right">3</property>
+                <signal name="clicked" handler="ao_limpar" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFrame" id="frame_resultado">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label-xalign">0</property>
+            <child>
+              <object class="GtkBox" id="box_resultado">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">2</property>
+                <property name="margin-right">2</property>
+                <property name="margin-top">20</property>
+                <property name="margin-bottom">20</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkLabel" id="lbl_cada_pessoa">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label">Cada pessoa paga</property>
+                    <property name="justify">center</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_resultado">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label">R$ 0.00</property>
+                    <property name="justify">center</property>
+                    <attributes>
+                      <attribute name="weight" value="bold"/>
+                      <attribute name="scale" value="1.5"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFrame" id="frame_status">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label-xalign">0</property>
+            <child>
+              <object class="GtkBox" id="box_status">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">2</property>
+                <property name="margin-right">2</property>
+                <property name="margin-start">8</property>
+                <property name="margin-end">8</property>
+                <property name="margin-top">8</property>
+                <property name="margin-bottom">8</property>
+                <property name="spacing">8</property>
+                <child>
+                  <object class="GtkImage" id="imagem_status">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="icon-name">emblem-ok</property>
+                    <property name="icon_size">1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lbl_status">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label">Aguardando...</property>
+                    <property name="xalign">0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
