@@ -98,6 +98,20 @@
         </child>
 
         <child>
+          <object class="GtkCheckButton" id="chk_taxa">
+            <property name="label" translatable="yes">Incluir taxa de serviço de 10%</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="active">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+
+        <child>
           <object class="GtkBox" id="box_botoes">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
@@ -133,7 +147,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">2</property>
+            <property name="position">3</property>
           </packing>
         </child>
 
@@ -147,7 +161,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">3</property>
+            <property name="position">4</property>
           </packing>
         </child>
 
@@ -159,7 +173,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">4</property>
+            <property name="position">5</property>
           </packing>
         </child>
 
@@ -173,7 +187,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">5</property>
+            <property name="position">6</property>
           </packing>
         </child>
 
@@ -187,7 +201,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">6</property>
+            <property name="position">7</property>
           </packing>
         </child>
 
