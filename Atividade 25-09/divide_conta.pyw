@@ -138,7 +138,7 @@ class Tela:
             f"{f'Gorjeta ({percentual_gorjeta:g}%)':<22}{formatar_moeda(valor_gorjeta):>12}",
             f"{'Total com gorjeta':<22}{formatar_moeda(total):>12}",
             f"{'Pessoas':<22}{pessoas:>12}",
-            "--------------------------------",
+            "---------------------------------------------------",
             f"{'VALOR POR PESSOA':<22}{formatar_moeda(valor_por_pessoa):>12}",
         ))
 
