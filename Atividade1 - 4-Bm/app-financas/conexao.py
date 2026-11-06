@@ -1,29 +1,22 @@
-"""
 # -*- coding: utf-8 -*-
-"""
 
 import configparser
-import certifi
-import mysql.connector
+import ssl
+import pymysql
 
 def conectar():
     cfg = configparser.ConfigParser(interpolation=None)
     cfg.read("config.ini", encoding="utf-8")
     banco = cfg["banco"]
+    ssl_context = ssl.create_default_context()
+    ssl_context.check_hostname = False
+    ssl_context.verify_mode = ssl.CERT_NONE
 
-    parametros = {
-        "host": banco["host"],
-        "port": banco.getint("porta"),
-        "user": banco["usuario"],
-        "password": banco["senha"],
-        "database": banco["nome"],
-    }
-
-    if banco.get("tls", "sim").lower() == "sim":
-        parametros["ssl_ca"] = certifi.where()
-        parametros["ssl_verify_cert"] = True
-        parametros["ssl_verify_identity"] = True
-    else:
-        parametros["ssl_disabled"] = True
-
-    return mysql.connector.connect(**parametros)
+    return pymysql.connect(
+        host=banco["host"],
+        port=banco.getint("porta"),
+        user=banco["usuario"],
+        password=banco["senha"],
+        database=banco["nome"],
+        ssl=ssl_context
+    )

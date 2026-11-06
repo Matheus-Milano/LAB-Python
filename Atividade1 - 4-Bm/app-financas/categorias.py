@@ -1,17 +1,17 @@
-"""
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
 
-"""Cadastro de categorias (CRUD) do projeto Finanças da Família."""
+"""
+Matheus Milano, Nathan Mazzaro, Gabriel Acelga, Dente Venga, Emmanuel 
+"""
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 import mysql.connector
 import repositorio_categoria as repo
 
-TIPOS = {"R": "Receita", "D": "Despesa"}
 
+TIPOS = {"R": "Receita", "D": "Despesa"}
 class Aplicacao:
     def __init__(self):
         builder = Gtk.Builder()
@@ -27,15 +27,12 @@ class Aplicacao:
         self.tvw_categorias = builder.get_object("tvw_categorias")
         self.lst_categorias = builder.get_object("lst_categorias")
         self.selecao = self.tvw_categorias.get_selection()
-
         self.id_em_edicao = None
-
         self.btn_gravar.connect("clicked", self.ao_gravar)
         self.btn_editar.connect("clicked", self.ao_editar)
         self.btn_excluir.connect("clicked", self.ao_excluir)
         self.selecao.connect("changed", self.ao_mudar_selecao)
         self.janela.connect("destroy", Gtk.main_quit)
-
         self.carregar_tabela()
         self.janela.show_all()
 
